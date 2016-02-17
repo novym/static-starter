@@ -1,0 +1,59 @@
+//======= Color Variables
+$white: #FFFFFF;
+$gray: #95a5a6;
+$black: #000000;
+$red: #e74c3c;
+$green: #2ecc71;
+$blue: #3498db;
+//======== Mixins
+@mixin transform($val) {
+  transform: $val;
+}
+
+//======== Normalize 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+//======= Site
+nav {
+  background-color: $gray;
+  border: 1px solid $blue;
+}
+
+footer {
+  background-color: $black;
+  border: 3px solid gray;
+  color: #fff;
+  clear: both;
+  text-align: right;
+}
+
+img {
+  width: 100%;
+}
+
+.parent {
+  .son {
+    border: 5px solid $black;
+    background-color: $red;
+    float: right;
+    text-align: center;
+    width: 50%;
+    &:hover {
+      @include transform(scale(1.1));
+    }
+  }
+  .daughter {
+    background-color: $green;
+    border: 5px solid $black;
+    float: left;
+    text-align: center;
+    width: 50%;
+  }
+}
